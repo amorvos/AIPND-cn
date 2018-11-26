@@ -1,4 +1,22 @@
 import random
+import time
+
+MAZE = [
+    [3, 2, 2, 2, 2, 2, 2, 2, 1],
+    [0, 0, 2, 2, 2, 2, 2, 0, 0],
+    [2, 0, 0, 2, 2, 2, 0, 0, 2],
+    [2, 2, 0, 0, 2, 0, 0, 2, 2],
+    [2, 2, 2, 0, 0, 0, 2, 2, 2]]
+
+
+def fetch_maze():
+    print("maze-id {}-{}".format(1, round(time.time())))
+    print('[' + str(MAZE[0]) + ',')
+    for line in MAZE[1:-1]:
+        print(' ' + str(line) + ',')
+    print(' ' + str(MAZE[-1]) + ']')
+    return MAZE
+
 
 env_data = [
     [3, 2, 2, 2, 2, 2, 2, 2, 1],
@@ -24,12 +42,7 @@ def count_col_barriers(data: [[]], col: int):
     return result
 
 
-loc_map = {'start': (4, 8), 'destination': (0, 0)}
-
-robot_current_loc = loc_map['start']
-
-
-def is_move_valid_special(env_data: [[]], loc: (), act: str):
+def is_move_valid(env_data: [[]], loc: (), act: str):
     # 向上走
     if 'u' == act and loc[0] - 1 >= 0 and env_data[loc[0] - 1][loc[1]] != 2:
         return True
@@ -51,23 +64,23 @@ actions = ['u', 'd', 'l', 'r']
 def valid_actions(env_data: [[]], loc: ()) -> []:
     result = []
     for action in actions:
-        if is_move_valid_special(env_data, loc, action):
+        if is_move_valid(env_data, loc, action):
             result.append(action)
     return result
 
 
 def move_robot(loc: (), act: str) -> ():
     # 向上走
-    if 'u' == act and loc[0] - 1 >= 0 and env_data[loc[0] - 1][loc[1]] != 2:
+    if 'u' == act and is_move_valid(env_data, loc, act):
         return loc[0] - 1, loc[1]
     # 向下走
-    if 'd' == act and loc[0] + 1 < env_data.__len__() and env_data[loc[0] + 1][loc[1]] != 2:
+    if 'd' == act and is_move_valid(env_data, loc, act):
         return loc[0] + 1, loc[1]
     # 向左走
-    if 'l' == act and loc[1] - 1 >= 0 and env_data[loc[0]][loc[1] - 1] != 2:
+    if 'l' == act and is_move_valid(env_data, loc, act):
         return loc[0], loc[1] - 1
     # 向右走
-    if 'r' == act and loc[1] + 1 < env_data[0].__len__() and env_data[loc[0]][loc[1] + 1] != 2:
+    if 'r' == act and is_move_valid(env_data, loc, act):
         return loc[0], loc[1] + 1
     return loc
 
