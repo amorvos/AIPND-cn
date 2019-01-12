@@ -1,10 +1,7 @@
 # encoding = utf8
 
-import matplotlib
-import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
+import pandas as pd
 
 movie_data = pd.read_csv("./tmdb-movies.csv")
 
@@ -24,31 +21,40 @@ simple_data = movie_data[['id', 'popularity', 'budget', 'runtime', 'vote_average
 # print(movie_data.groupby('director').agg({"popularity": np.average}).sort_values('popularity', ascending=False))
 
 
-pop_data = movie_data[['original_title', 'popularity']].sort_values('popularity', ascending=False).head(20)
+# bin_edges = np.arange(0, pop_data['popularity'].max() + 1 / 4, 1 / 4)
+# plt.hist(data=pop_data, x='original_title', bins = bin_edges)
+#
+# # y_means = pd.to_datetime(df['indate']) - pd.to_datetime(df['dob'])
+#
+# y_means = movie_data['revenue'] - movie_data['budget']
 
-bin_edges = np.arange(0, pop_data['popularity'].max() + 1 / 4, 1 / 4)
-plt.hist(data=pop_data, x='original_title', bins = bin_edges)
+# #评分和票房高的电影的导演排行
+# top_votes =movie_data[movie_credit['vote_average'] >=8].sort_values(by = 'vote_average', ascending = False)
+# top_votes[top_votes.isnull()]
+# #删除空值
+# top_votes = top_votes[[ 'director', 'vote_average' , 'revenue']].dropna()
+# top_revenue = top_votes.sort_values(by = 'revenue', ascending = False)
+# top_revenue = top_revenue[[ 'revenue','director']]
+# top_revenue1 = top_revenue.groupby('director')['revenue'].mean().sort_values(ascending = True)
+#
+# # 图表可视化
+# plt.figure(figsize = (15,5))
+# plt.subplot(1,2,1)
+# ax1 =top_revenue1.tail(10).plot.barh(width=0.8,color = '#228B22')
+# plt.xticks(fontsize=13 ,rotation = 0)
+# plt.yticks(fontsize=13)movie_data['popularity'].max
+# plt.xlabel('票房',fontsize = 13)
+# plt.ylabel('导演', fontsize = 13)
+# plt.grid(True)
+# plt.title('高票房高评分导演排行榜', fontsize = 15)
+movie_data['profit'] = movie_data['revenue'] - movie_data['budget']
+movie_data.index = movie_data['release_year']
+new_array = movie_data.groupby('release_year', as_index=True)['profit'].sem()
 
-# y_means = pd.to_datetime(df['indate']) - pd.to_datetime(df['dob'])
+profit_data = pd.DataFrame(new_array)
+profit_data.sort_values(by='release_year', ascending=True).plot(kind='barh')
 
-y_means = movie_data['revenue'] - movie_data['budget']
-
-#评分和票房高的电影的导演排行
-top_votes =movie_data[movie_credit['vote_average'] >=8].sort_values(by = 'vote_average', ascending = False)
-top_votes[top_votes.isnull()]
-#删除空值
-top_votes = top_votes[[ 'director', 'vote_average' , 'revenue']].dropna()
-top_revenue = top_votes.sort_values(by = 'revenue', ascending = False)
-top_revenue = top_revenue[[ 'revenue','director']]
-top_revenue1 = top_revenue.groupby('director')['revenue'].mean().sort_values(ascending = True)
-
-# 图表可视化
-plt.figure(figsize = (15,5))
-plt.subplot(1,2,1)
-ax1 =top_revenue1.tail(10).plot.barh(width=0.8,color = '#228B22')
-plt.xticks(fontsize=13 ,rotation = 0)
-plt.yticks(fontsize=13)
-plt.xlabel('票房',fontsize = 13)
-plt.ylabel('导演', fontsize = 13)
+plt.xlabel('sem_profit')
+plt.ylabel('release_year')
 plt.grid(True)
-plt.title('高票房高评分导演排行榜', fontsize = 15)
+plt.show()
