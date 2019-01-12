@@ -1,7 +1,9 @@
 # encoding = utf8
 
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
+import seaborn as sns
 
 movie_data = pd.read_csv("./tmdb-movies.csv")
 
@@ -54,7 +56,8 @@ new_array = movie_data.groupby('release_year', as_index=True)['profit'].sem()
 profit_data = pd.DataFrame(new_array)
 profit_data.sort_values(by='release_year', ascending=True).plot(kind='barh')
 
-plt.xlabel('sem_profit')
-plt.ylabel('release_year')
+plt.title('各种电影类型的平均利润')
+plt.xlabel('平均利润（美元）')
+plt.ylabel('电影类型')
 plt.grid(True)
 plt.show()
