@@ -28,20 +28,25 @@ parser.add_argument(
     "--learning_rate", type=float, default=0.001
 )
 
+parser.add_argument(
+    "--epoch", type=int, default=15
+)
+
 args = parser.parse_args()
 criterion = nn.NLLLoss()
 
 
-def train(gpu, model, data_loader: DataLoader, learning_rate: float):
+def train(gpu, model, data_loader: DataLoader, learning_rate: float, valid_num=3):
     optimizer = optim.Adam(model.classifier.parameters(), lr=learning_rate)
-    if gpu == "gpu":
+    if gpu == "gpu" and torch.cuda.is_available():
         model.to("cuda")
     else:
         model.to("cpu")
     model.train()
+    train_loss = 0
     for index, (inputs, labels) in enumerate(data_loader):
         optimizer.zero_grad()
-        if gpu == "gpu":
+        if gpu == "gpu" and torch.cuda.is_available():
             inputs, labels = inputs.to("cuda"), labels.to("cuda")
         else:
             inputs, labels = inputs.to("cpu"), labels.to("cpu")
@@ -49,6 +54,9 @@ def train(gpu, model, data_loader: DataLoader, learning_rate: float):
         loss = criterion(ouputs, labels)
         loss.backward()
         optimizer.step()
+        train_loss += loss.item()
+        if (index + 1) % int(len(data_loader) / valid_num) == 0:
+            print("Valid -> Loss:{:.2f}% Accuracy:{:f}%".format(*valid(test_loader)))
 
 
 def valid(data_loader: DataLoader):
@@ -112,13 +120,17 @@ if __name__ == '__main__':
     valid_loader = DataLoader(valid_dataset, batch_size=32)
     test_loader = DataLoader(test_dataset, batch_size=32)
 
-    model = models.vgg16(pretrained=True)
+    if args.arch == 'dense':
+        model = models.densenet121(pretrained=True)
+    elif args.arch == 'vgg11':
+        model = models.vgg11(pretrained=True)
+    else:
+        model = models.vgg16(pretrained=True)
 
-    epoch = 10
-    for batch in range(0, epoch):
+    for batch in range(0, args.epoch):
         print("batch {} ---- start".format(batch))
         train(args.gpu, train_loader, args.learning_rate)
-    print(valid(valid_loader))
+    print(valid(test_loader))
     if args.save_dir is not None:
         save(args.save_dir, train_dataset)
         print("训练结果保存成功")

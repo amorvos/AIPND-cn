@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5980b1b5-a62e-48f3-91fc-ebfa4ee688ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Image Classifier/Image Classifier Project-zh.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Image Classifier/learn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Image Classifier/vgg16_checkpoint.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/P2_Explore_Movie_Dataset/movie.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image Classifier/Image Classifier Project-zh.html" beforeDir="false" afterPath="$PROJECT_DIR$/Image Classifier/Image Classifier Project-zh.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Image Classifier/Image Classifier Project-zh.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Image Classifier/Image Classifier Project-zh.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Image Classifier/cat_to_name.json" beforeDir="false" afterPath="$PROJECT_DIR$/Image Classifier/cat_to_name.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Image Classifier/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/Image Classifier/predict.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Image Classifier/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/Image Classifier/train.py" afterDir="false" />
     </list>
@@ -39,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Image Classifier/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="8" selection-start-line="8" selection-end-line="30" selection-end-column="26" />
+            <state relative-caret-position="377">
+              <caret line="129" column="36" selection-start-line="129" selection-start-column="36" selection-end-line="129" selection-end-column="36" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -52,82 +48,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Image Classifier/LICENSE">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Image Classifier/Image Classifier Project-zh.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Image Classifier/learn.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="21" selection-end-line="190" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Image Classifier/predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+            <state relative-caret-position="377">
+              <caret line="113" column="23" lean-forward="true" selection-start-line="113" selection-start-column="23" selection-end-line="113" selection-end-column="23" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ftplib.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="561" column="8" selection-start-line="561" selection-start-column="8" selection-end-line="561" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/idlelib/pathbrowser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/env/AIPND-cn/lib/python3.7/site-packages/torch/__init__.pyi">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-              <folding>
-                <element signature="e#1#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/typing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10140">
-              <caret line="400" selection-start-line="400" selection-end-line="400" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/env/AIPND-cn/lib/python3.7/site-packages/torchvision/transforms/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -163,6 +92,7 @@
       <find>cuda</find>
       <find>criterion</find>
       <find>train_dataset</find>
+      <find>learning_rate</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -177,8 +107,8 @@
         <option value="$PROJECT_DIR$/P2_Explore_Movie_Dataset/movie.py" />
         <option value="$PROJECT_DIR$/P2_Explore_Movie_Dataset/learn.py" />
         <option value="$PROJECT_DIR$/Image Classifier/cat_to_name.json" />
-        <option value="$PROJECT_DIR$/Image Classifier/train.py" />
         <option value="$PROJECT_DIR$/Image Classifier/predict.py" />
+        <option value="$PROJECT_DIR$/Image Classifier/train.py" />
       </list>
     </option>
   </component>
@@ -215,11 +145,6 @@
             <path>
               <item name="AIPND-cn" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIPND-cn" type="462c0819:PsiDirectoryNode" />
-              <item name="P1_Robot_Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIPND-cn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIPND-cn" type="462c0819:PsiDirectoryNode" />
               <item name="P2_Explore_Movie_Dataset" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -236,14 +161,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Image Classifier" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Image Classifier" />
       <recent name="$PROJECT_DIR$/P2_Explore_Movie_Dataset" />
       <recent name="$PROJECT_DIR$/P1_Robot_Controller" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Image Classifier" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -378,7 +303,8 @@
       <workItem from="1552363479447" duration="3468000" />
       <workItem from="1552398499342" duration="1646000" />
       <workItem from="1552533322008" duration="34000" />
-      <workItem from="1552705977611" duration="3740000" />
+      <workItem from="1552705977611" duration="4295000" />
+      <workItem from="1553273633829" duration="1955000" />
     </task>
     <task id="LOCAL-00001" summary="finish robot">
       <created>1543195487456</created>
@@ -422,18 +348,27 @@
       <option name="project" value="LOCAL" />
       <updated>1552743577829</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="image">
+      <created>1552743825330</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1552743825330</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33575000" />
+    <option name="totallyTimeSpent" value="36085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="23" width="1389" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18337046" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18559763" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Statistic" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.36351705" />
@@ -445,7 +380,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.44750655" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.44750655" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32939634" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -684,13 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/P2_Explore_Movie_Dataset/movie.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6812">
-          <caret line="265" column="14" selection-start-line="265" selection-start-column="14" selection-end-line="265" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/P2_Explore_Movie_Dataset/learn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1274">
@@ -725,22 +653,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/typing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10140">
-          <caret line="400" selection-start-line="400" selection-end-line="400" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/env/AIPND-cn/lib/python3.7/site-packages/torchvision/transforms/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Image Classifier/Image Classifier Project-zh.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-916">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Image Classifier/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Image Classifier/Image Classifier Project-zh.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
@@ -756,37 +677,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Image Classifier/train.py">
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ftplib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" selection-start-line="8" selection-end-line="30" selection-end-column="26" />
+        <state relative-caret-position="14534">
+          <caret line="561" column="8" selection-start-line="561" selection-start-column="8" selection-end-line="561" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/idlelib/pathbrowser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1014">
+          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/typing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10140">
+          <caret line="400" selection-start-line="400" selection-end-line="400" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/env/AIPND-cn/lib/python3.7/site-packages/torchvision/transforms/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/P2_Explore_Movie_Dataset/movie.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="430" column="38" lean-forward="true" selection-start-line="430" selection-start-column="38" selection-end-line="430" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Image Classifier/predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="113" column="23" lean-forward="true" selection-start-line="113" selection-start-column="23" selection-end-line="113" selection-end-column="23" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Image Classifier/LICENSE">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/idlelib/pathbrowser.py">
+    <entry file="file://$PROJECT_DIR$/Image Classifier/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ftplib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="561" column="8" selection-start-line="561" selection-start-column="8" selection-end-line="561" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Image Classifier/predict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+        <state relative-caret-position="377">
+          <caret line="129" column="36" selection-start-line="129" selection-start-column="36" selection-end-line="129" selection-end-column="36" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

@@ -21,12 +21,23 @@ parser.add_argument(
     "-p", "--path", type=str, default="/home/workspace/aipnd-project/flowers/train/1/image_06734.jpg",
 )
 
+parser.add_argument(
+    "-a", "--arch", type=str, default="vgg16"
+)
+
 args = parser.parse_args()
 
 
-def load_checkpoint(filepath: str):
+def load_checkpoint(filepath: str, arch: str):
     checkpoint = torch.load(filepath)
-    model = models.vgg16(pretrained=True)
+
+    if args.arch == 'dense':
+        model = models.densenet121(pretrained=True)
+    elif args.arch == 'vgg11':
+        model = models.vgg11(pretrained=True)
+    else:
+        model = models.vgg16(pretrained=True)
+
     for param in model.parameters():
         param.requires_grad = False
 
@@ -86,7 +97,10 @@ def imshow(image, ax=None, title=None):
 
 
 def predict(image_path, model, topk=5):
-    model.to("cuda")
+    if torch.cuda.is_available():
+        model.to("cuda")
+    else:
+        model.to("cpu")
     model.eval()
     img_tensor = torch.from_numpy(process_image(image_path))
     img_tensor.unsqueeze_(0)
@@ -101,6 +115,6 @@ def predict(image_path, model, topk=5):
 
 
 if __name__ == '__main__':
-    model, class_to_idx = load_checkpoint("vgg16_checkpoint.pth")
+    model, class_to_idx = load_checkpoint("vgg16_checkpoint.pth", args.arch)
     optimizer = optim.Adam(model.classifier.parameters(), lr=0.001)
     print(predict(args.p, model))
