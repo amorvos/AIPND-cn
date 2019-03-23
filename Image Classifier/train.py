@@ -1,4 +1,5 @@
 import argparse
+from collections import OrderedDict
 
 import torch
 from torch import nn, optim
@@ -36,7 +37,18 @@ args = parser.parse_args()
 criterion = nn.NLLLoss()
 
 
-def train(gpu, model, data_loader: DataLoader, learning_rate: float, valid_num=3):
+def train(gpu, model, data_loader: DataLoader, learning_rate: float, valid_num=3,
+          input_size=25088,
+          hidden_units=4096,
+          output_size=102):
+
+    model.classifier = nn.Sequential(OrderedDict([
+        ("fc1", nn.Linear(input_size, hidden_units)),
+        ("relu1", nn.ReLU()),
+        ("dropout", nn.Dropout(p=0.5)),
+        ("fc2", nn.Linear(hidden_units, output_size)),
+        ("output", nn.LogSoftmax(dim=1))
+    ]))
     optimizer = optim.Adam(model.classifier.parameters(), lr=learning_rate)
     if gpu == "gpu" and torch.cuda.is_available():
         model.to("cuda")
@@ -76,11 +88,11 @@ def valid(data_loader: DataLoader):
         return test_loss / len(data_loader), accuracy / len(data_loader) * 100
 
 
-def save(save_file_name: str, train_dataset):
+def save(save_file_name: str, train_dataset, input_size=25088, output_size=102):
     class_to_idx = {val: key for key, val in train_dataset.class_to_idx.items()}
     checkpoint = {
-        "input_size": 25088,
-        "output_size": 102,
+        "input_size": input_size,
+        "output_size": output_size,
         "class_to_idx": class_to_idx,
         "state_dict": model.state_dict()
     }
@@ -126,6 +138,9 @@ if __name__ == '__main__':
         model = models.vgg11(pretrained=True)
     else:
         model = models.vgg16(pretrained=True)
+
+    for param in model.parameters():
+        param.requires_grad = False
 
     for batch in range(0, args.epoch):
         print("batch {} ---- start".format(batch))
